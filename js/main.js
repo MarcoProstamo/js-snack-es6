@@ -59,3 +59,27 @@ for (const soccerTeam of soccerTeams) {
 }
 
 console.table(soccerTeamsFoulsDrawn);
+
+// ! Snack 3
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const indexOfNumberA = 2;
+const indexOfNumberB = 8;
+
+/**
+ *
+ * Returns an array with the elements in the given index range
+ *
+ * @param {object} array
+ * @param {number} index1
+ * @param {number} index2
+ * @returns {object}
+ */
+function elementsBetweenTwoIndexes(array, index1, index2) {
+  const elementsInBetween = [];
+  for (let i = index1 + 1; i < index2; i++) elementsInBetween.push(array[i]);
+  return elementsInBetween;
+}
+
+console.table(
+  elementsBetweenTwoIndexes(numbers, indexOfNumberA, indexOfNumberB)
+);
