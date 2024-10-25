@@ -16,3 +16,46 @@ for (const raceBicycleWeight of raceBicyclesWeight)
     lighestRaceBicycle = raceBicycleWeight;
 
 console.log(lighestRaceBicycle);
+
+// ! Snack 2
+
+const soccerTeams = [
+  { name: "Liverpool", points: 0, fouls: { commited: 0, drawn: 0 } },
+  { name: "Arsenal", points: 0, fouls: { commited: 0, drawn: 0 } },
+  { name: "Aston Villa", points: 0, fouls: { commited: 0, drawn: 0 } },
+];
+
+/**
+ *
+ * Returns a random integer in the specified range
+ *
+ * @param {number} min Minimum value of the range
+ * @param {number} max Maximum value of the range
+ * @returns {number}
+ */
+function randomIntegerNumberInRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const minPoints = 1;
+const maxPoints = 21;
+const minFoulsDrawn = 0;
+const maxFoulsDrawn = 27;
+for (const soccerTeam of soccerTeams) {
+  soccerTeam.points = randomIntegerNumberInRange(minPoints, maxPoints);
+  soccerTeam.fouls.drawn = randomIntegerNumberInRange(
+    minFoulsDrawn,
+    maxFoulsDrawn
+  );
+}
+
+const soccerTeamsFoulsDrawn = [];
+for (const soccerTeam of soccerTeams) {
+  const {
+    name,
+    fouls: { drawn },
+  } = soccerTeam;
+  soccerTeamsFoulsDrawn.push({ name, drawn });
+}
+
+console.table(soccerTeamsFoulsDrawn);
